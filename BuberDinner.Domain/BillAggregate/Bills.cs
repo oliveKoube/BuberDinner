@@ -6,7 +6,7 @@ using BuberDinner.Domain.HostAggregate.ValueObjects;
 
 namespace BuberDinner.Domain.BillAggregate
 {
-    public sealed class Bills : AggregateRoot<BillsId>
+    public sealed class Bills : AggregateRoot<BillsId, Guid>
     {
         public DinnerId DinnerId { get; }
         public GuestId GuestId { get; }

@@ -7,7 +7,7 @@ using BuberDinner.Domain.UserAggregate.ValueObjects;
 
 namespace BuberDinner.Domain.HostAggregate
 {
-    public sealed class Host : AggregateRoot<HostId>
+    public sealed class Host : AggregateRoot<HostId, string>
     {
         private readonly List<MenuId> _menuIds;
         private readonly List<DinnerId> _dinnerIds;

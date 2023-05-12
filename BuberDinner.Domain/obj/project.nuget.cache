@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "uXINshZP41g/4UPacFI1AbYUN2uCcD6sr4XVwP0MGMfqg5HBEyfnOs/HRSfsNVd+3gOo+25yHdSbt1BJQ0xjCg==",
+  "dgSpecHash": "1y88ZJclLS+Rsj2ti9qhjNFAMOqO+whSlNqOS2ClQqc/wM4eQTEZBaAisOTCyFm0GJFL27CaZM9tLsA7pLxSpA==",
   "success": true,
   "projectFilePath": "D:\\Projets\\BuberDinner\\BuberDinner.Domain\\BuberDinner.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olive\\.nuget\\packages\\erroror\\1.0.0\\erroror.1.0.0.nupkg.sha512",
+    "C:\\Users\\olive\\.nuget\\packages\\mediatr\\12.0.1\\mediatr.12.0.1.nupkg.sha512",
+    "C:\\Users\\olive\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\olive\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\olive\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
     "C:\\Users\\olive\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
   ],

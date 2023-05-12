@@ -2,9 +2,9 @@
 
 namespace BuberDinner.Domain.MenuAggregate.ValueObjects
 {
-    public sealed class MenuId : ValueObject
+    public sealed class MenuId : AggregateRootId<Guid>
     {
-        public Guid Value { get; }
+        public override Guid Value { get; protected set; }
 
         private MenuId(Guid value)
         {
