@@ -19,6 +19,7 @@ public class BuberDinnerDbContext  : DbContext
     }
 
     public DbSet<Menu> Menus { get; set; } = null!;
+    public DbSet<Menu> Bills { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

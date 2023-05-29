@@ -8,11 +8,11 @@ namespace BuberDinner.Domain.GuestAggregate.Entities
 {
     public sealed class GuestRating : Entity<GuestRatingId>
     {
-        public HostId HostId { get; set; }
-        public DinnerId DinnerId { get; set; }
-        public Rating Rating { get; }
-        public DateTime CreatedDateTime { get; set; }
-        public DateTime UpdatedDateTime { get; set; }
+        public HostId HostId { get; private set; }
+        public DinnerId DinnerId { get; private set; }
+        public Rating Rating { get; private set; }
+        public DateTime CreatedDateTime { get; private set; }
+        public DateTime UpdatedDateTime { get; private set; }
         private GuestRating(GuestRatingId guestRatingId, HostId hostId, DinnerId dinnerId, Rating rating)
             : base(guestRatingId)
         {
@@ -23,7 +23,13 @@ namespace BuberDinner.Domain.GuestAggregate.Entities
             UpdatedDateTime = DateTime.Now;
         }
 
-        public static GuestRating Create(HostId hostId, DinnerId dinnerId, Rating rating) 
-            => new(GuestRatingId.CreateUnique(), hostId, dinnerId, rating);
+        public static GuestRating Create(HostId hostId, DinnerId dinnerId)
+            => new(GuestRatingId.CreateUnique(), hostId, dinnerId, Rating.CreateNew());
+
+#pragma warning disable CS8618
+        protected GuestRating()
+        {
+        }
+#pragma warning restore CS8618
     }
 }

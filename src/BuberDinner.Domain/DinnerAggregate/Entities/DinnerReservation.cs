@@ -6,12 +6,12 @@ namespace BuberDinner.Domain.DinnerAggregate.Entities
 {
     public sealed class DinnerReservation : Entity<DinnerReservartionId>
     {
-        public int GuestCount { get; }
-        public string ReservationStatus { get; }
-        public GuestId GuestId { get; }
-        public DateTime? ArrivalDateTime { get; set; }
-        public DateTime CreatedDateTime { get; set; }
-        public DateTime UpdatedDateTime { get; set; }
+        public int GuestCount { get; private set; }
+        public string ReservationStatus { get; private set; }
+        public GuestId GuestId { get; private set; }
+        public DateTime? ArrivalDateTime { get; private set; }
+        public DateTime CreatedDateTime { get; private set; }
+        public DateTime UpdatedDateTime { get; private set; }
         private DinnerReservation(DinnerReservartionId dinnerReservartionId,int guestCount, string reservationStatus,
             GuestId guestId, DateTime? arrivalDateTime)
             : base(dinnerReservartionId)
@@ -25,7 +25,13 @@ namespace BuberDinner.Domain.DinnerAggregate.Entities
         }
 
         public static DinnerReservation Create(int guestCount, string reservationStatus, GuestId guestId,
-            DateTime? arrivalDateTime) 
+            DateTime? arrivalDateTime)
             => new(DinnerReservartionId.CreateUnique(), guestCount, reservationStatus,guestId,null);
+
+#pragma warning disable CS8618
+        protected DinnerReservation()
+        {
+        }
+#pragma warning restore CS8618
     }
 }

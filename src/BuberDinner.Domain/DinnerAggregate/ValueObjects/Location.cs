@@ -4,11 +4,11 @@ namespace BuberDinner.Domain.DinnerAggregate.ValueObjects
 {
     public sealed class Location : ValueObject
     {
-        public string Name { get; }
-        public string Address { get; }
-        public double Latitude { get; }
-        public double Longitude { get; }
-        public Location(string name, string address,double latitude,double longitude)
+        public string Name { get; private set; }
+        public string Address { get; private set; }
+        public double Latitude { get; private set; }
+        public double Longitude { get; private set; }
+        private Location(string name, string address,double latitude,double longitude)
         {
             Name = name;
             Address = address;
