@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "6MM1kOOIJ46YH5lhcVPqLJAVJ1Rgi+8jTrhh8//gTcuXz2woWzjIh+VsHoG37uloJlMYZQEEQD2FQkADd9Tcjw==",
+  "success": true,
+  "projectFilePath": "D:\\Projets\\BuberDinner\\src\\BuberDinner.Contracts\\BuberDinner.Contracts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\olive\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
+    "C:\\Users\\olive\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Contracts", "BuberDinner.Contracts\BuberDinner.Contracts.csproj", "{56E3CF08-059F-4BEB-AEB3-F5D922BCEEEB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{501E3C3C-A67B-4BEE-81B5-713457BF788B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Infrastructure", "BuberDinner.Infrastructure\BuberDinner.Infrastructure.csproj", "{D56B4C19-FDDF-466A-9AF8-2CE2C39B8AED}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7D22BDA4-9362-4C94-9087-A40648739B69}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Application", "BuberDinner.Application\BuberDinner.Application.csproj", "{6EE91063-021D-4140-811B-200199059A06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Contracts", "src\BuberDinner.Contracts\BuberDinner.Contracts.csproj", "{56E3CF08-059F-4BEB-AEB3-F5D922BCEEEB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Domain", "BuberDinner.Domain\BuberDinner.Domain.csproj", "{4242A663-03BE-4D2A-BD99-E0B4776301C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Infrastructure", "src\BuberDinner.Infrastructure\BuberDinner.Infrastructure.csproj", "{D56B4C19-FDDF-466A-9AF8-2CE2C39B8AED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Api", "BuberDinner.Api\BuberDinner.Api.csproj", "{F3AC31B1-CD69-4973-9C98-D3EFAA7B85C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Application", "src\BuberDinner.Application\BuberDinner.Application.csproj", "{6EE91063-021D-4140-811B-200199059A06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Domain", "src\BuberDinner.Domain\BuberDinner.Domain.csproj", "{4242A663-03BE-4D2A-BD99-E0B4776301C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Api", "src\BuberDinner.Api\BuberDinner.Api.csproj", "{F3AC31B1-CD69-4973-9C98-D3EFAA7B85C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +46,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{56E3CF08-059F-4BEB-AEB3-F5D922BCEEEB} = {501E3C3C-A67B-4BEE-81B5-713457BF788B}
+		{D56B4C19-FDDF-466A-9AF8-2CE2C39B8AED} = {501E3C3C-A67B-4BEE-81B5-713457BF788B}
+		{6EE91063-021D-4140-811B-200199059A06} = {501E3C3C-A67B-4BEE-81B5-713457BF788B}
+		{4242A663-03BE-4D2A-BD99-E0B4776301C8} = {501E3C3C-A67B-4BEE-81B5-713457BF788B}
+		{F3AC31B1-CD69-4973-9C98-D3EFAA7B85C8} = {501E3C3C-A67B-4BEE-81B5-713457BF788B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16790528-A4A6-4BE5-AE14-FF129EC79993}
