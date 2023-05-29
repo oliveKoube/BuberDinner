@@ -8,3 +8,7 @@
 /BuberDinner.Domain/obj/
 /BuberDinner.Infrasctructure/bin/
 /BuberDinner.Infrasctructure/obj/
+/tests/UnitTests/BuberDinner.Application.UnitTests/obj
+/tests/UnitTests/BuberDinner.Application.UnitTests/bin
+/src/BuberDinner.Api/obj
+/src/BuberDinner.Api/bin
