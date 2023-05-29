@@ -7,17 +7,17 @@ using MediatR;
 namespace BuberDinner.Application.Menus.Commands
 {
     public record CreateMenuCommand(
-        string Name,
         string HostId,
-        string Description,
-        List<MenuSectionCommand> Sections) : IRequest<ErrorOr<Menu>>;
-
-    public record MenuSectionCommand(
         string Name,
         string Description,
-        List<MenuItemCommand> Items);
+        List<CreateMenuSectionCommand> Sections) : IRequest<ErrorOr<Menu>>;
 
-    public record MenuItemCommand(
+    public record CreateMenuSectionCommand(
+        string Name,
+        string Description,
+        List<CreateMenuItemCommand> Items);
+
+    public record CreateMenuItemCommand(
         string Name,
         string Description);
 }

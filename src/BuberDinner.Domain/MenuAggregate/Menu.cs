@@ -24,7 +24,7 @@ namespace BuberDinner.Domain.MenuAggregate
         public DateTime CreatedDateTime { get; private set; }
         public DateTime UpdatedDateTime { get; private set; }
 
-        private Menu(MenuId menuId, string name, string description,AverageRating averageRating, HostId hostId,
+        private Menu(MenuId menuId, HostId hostId,string name, string description,AverageRating averageRating,
             List<MenuSection>? sections)
             : base(menuId)
         {
@@ -41,10 +41,10 @@ namespace BuberDinner.Domain.MenuAggregate
         {
             var menu = new Menu(
                 MenuId.CreateUnique(),
+                hostId,
                 name,
                 description,
                 AverageRating.CreateNew(),
-                hostId,
                 sections ?? new());
 
             menu.AddDomainEvent(new MenuCreated(menu));
