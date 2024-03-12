@@ -1,42 +1,41 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>a01659bd-3a7c-4ada-9aa2-571a03cd875d</UserSecretsId>
     </PropertyGroup>
-    
+
 
     <ItemGroup>
-      <ProjectReference Include="..\BuberDinner.Contracts\BuberDinner.Contracts.csproj" />
       <ProjectReference Include="..\BuberDinner.Infrastructure\BuberDinner.Infrastructure.csproj" />
     </ItemGroup>
-    
+
 
     <ItemGroup>
       <Compile Remove="Middleware\**" />
       <Compile Remove="Filters\**" />
     </ItemGroup>
-    
+
 
     <ItemGroup>
       <EmbeddedResource Remove="Middleware\**" />
       <EmbeddedResource Remove="Filters\**" />
     </ItemGroup>
-    
+
 
     <ItemGroup>
       <None Remove="Middleware\**" />
       <None Remove="Filters\**" />
     </ItemGroup>
-    
+
 
     <ItemGroup>
       <Content Remove="Middleware\**" />
       <Content Remove="Filters\**" />
     </ItemGroup>
-    
+
 
     <ItemGroup>
       <PackageReference Include="Mapster" Version="7.3.0" />

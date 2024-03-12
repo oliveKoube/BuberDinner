@@ -1,5 +1,5 @@
-﻿using BuberDinner.Application.Menus.Commands;
-using BuberDinner.Contracts.Menus;
+﻿using BuberDinner.Api.Controllers.Menu;
+using BuberDinner.Application.Menus.Commands;
 using BuberDinner.Domain.MenuAggregate;
 using Mapster;
 

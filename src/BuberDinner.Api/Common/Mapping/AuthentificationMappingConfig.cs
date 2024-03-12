@@ -1,7 +1,8 @@
-﻿using BuberDinner.Application.Authentification.Commands.Register;
+﻿using BuberDinner.Api.Controllers.Authentification;
+using BuberDinner.Application.Authentification.Commands.Register;
 using BuberDinner.Application.Authentification.Common;
 using BuberDinner.Application.Authentification.Queries.Login;
-using BuberDinner.Contracts.Authentification;
+
 using Mapster;
 
 namespace BuberDinner.Api.Common.Mapping;
