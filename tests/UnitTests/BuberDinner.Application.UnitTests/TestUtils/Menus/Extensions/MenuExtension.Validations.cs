@@ -1,4 +1,4 @@
-﻿using BuberDinner.Application.Menus.Commands;
+﻿using BuberDinner.Application.Menus.CreateMenu;
 using BuberDinner.Domain.MenuAggregate;
 using BuberDinner.Domain.MenuAggregate.Entities;
 

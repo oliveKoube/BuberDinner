@@ -1,25 +1,34 @@
 using BuberDinner.Api;
 using BuberDinner.Application;
 using BuberDinner.Infrastructure;
+using FastEndpoints;
+using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-{
-    builder.Services
+builder.Host.UseSerilog((context, loggerconfig)
+    => loggerconfig.ReadFrom.Configuration(context.Configuration));
+
+builder.Services
         .AddPresentation()
         .AddApplication()
         .AddInfrastructure(builder.Configuration);
 
-    // builder.Services.AddControllers(options => options.Filters.Add<ErrorHandlingFilterAttribute>()); Fichiers cachés
-}
+// builder.Services.AddControllers(options => options.Filters.Add<ErrorHandlingFilterAttribute>()); Fichiers cachés
+builder.Services.AddFastEndpoints();
+WebApplication app = builder.Build();
 
-var app = builder.Build();
-{
-    // app.UseMiddleware<ErrorHandlingMiddleware>(); Fichiers cachés
-    app.UseExceptionHandler("/error");
-    app.UseHttpsRedirection();
-    app.UseAuthentication();
-    app.UseAuthorization();
-    app.MapControllers();
-    app.Run();
-}
+app.UseHttpsRedirection();
+
+app.UseSerilogRequestLogging();
+
+app.UseExceptionHandler();
+
+app.UseAuthentication();
+
+app.UseAuthorization();
+
+app.UseFastEndpoints();
+app.Run();
+
+public partial class Program;

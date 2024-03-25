@@ -1,18 +1,19 @@
 ﻿using BuberDinner.Domain.Common.Models;
+using BuberDinner.Domain.UserAggregate.Events;
 using BuberDinner.Domain.UserAggregate.ValueObjects;
 
 namespace BuberDinner.Domain.UserAggregate;
 
-public sealed class User : Entity<UserId>
+public sealed class User : AggregateRoot<UserId, Guid>
 {
-    public string FirstName { get; private set; } = null!;
-    public string LastName { get; private set; } = null!;
-    public string Email { get; private set; } = null!;
-    public string Password { get; private set; } = null!;
+    public FirstName FirstName { get; private set; } = null!;
+    public LastName LastName { get; private set; } = null!;
+    public Email Email { get; private set; } = null!;
+    public Password Password { get; private set; } = null!;
     public DateTime CreatedDateTime { get; private set; }
     public DateTime UpdatedDateTime { get; private set; }
-    private User(UserId userId, string firstName, string lastName, string email,
-        string password)
+    private User(UserId userId, FirstName firstName, LastName lastName, Email email,
+        Password password)
         : base(userId)
     {
         FirstName = firstName;
@@ -23,11 +24,17 @@ public sealed class User : Entity<UserId>
         UpdatedDateTime = DateTime.Now;
     }
 
-    public static User Create(string firstName, string lastName, string email, string password)
-            => new(UserId.CreateUnique(), firstName, lastName, email, password);
+    public static User Create(FirstName firstName, LastName lastName, Email email, Password password)
+    {
+        var user = new User(UserId.CreateUnique(), firstName, lastName, email, password);
+
+        user.AddDomainEvent(new UserCreatedDomainEvent(user.Id.Value));
+
+        return user;
+    }
 
 #pragma warning disable CS8618
-    public User()
+    private User()
     {
     }
 #pragma warning restore CS8618

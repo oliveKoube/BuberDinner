@@ -1,8 +1,11 @@
 ﻿using System.Text;
+using Bookify.Domain.Abstractions;
+using BuberDinner.Application.Common.Caching;
 using BuberDinner.Application.Common.Interfaces.Authentification;
 using BuberDinner.Application.Common.Interfaces.Persistence;
 using BuberDinner.Application.Common.Interfaces.Services;
 using BuberDinner.Infrastructure.Authentification;
+using BuberDinner.Infrastructure.Caching;
 using BuberDinner.Infrastructure.Persistence;
 using BuberDinner.Infrastructure.Persistence.Interceptors;
 using BuberDinner.Infrastructure.Persistence.Repositories;
@@ -23,43 +26,47 @@ public static class DependecyInjection
         ConfigurationManager builderConfiguration)
     {
         services
-            .AddAuth(builderConfiguration)
-            .AddPersistance();
+            .AddAuth()
+            .AddPersistance(builderConfiguration)
+            .AddCaching(builderConfiguration);
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
         return services;
     }
 
-    public static IServiceCollection AddPersistance(this IServiceCollection services)
+    private static IServiceCollection AddPersistance(this IServiceCollection services, IConfiguration configuration)
     {
+        string connectionString = configuration.GetConnectionString("Database") ??
+                                  throw new ArgumentNullException(nameof(configuration));
         services.AddDbContext<BuberDinnerDbContext>(options =>
-            options.UseSqlServer("Server=localhost;Database=BuberDinner;User Id=sa;Password=P@ssword;Encrypt=false"));
+            options.UseSqlServer(connectionString));
         services.AddScoped<PublishDomainEventsInterceptor>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMenuRepository, MenuRepository>();
+        services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<BuberDinnerDbContext>());
         return services;
     }
 
-    public static IServiceCollection AddAuth(this IServiceCollection services,
-        ConfigurationManager builderConfiguration)
+    private static IServiceCollection AddAuth(this IServiceCollection services)
     {
-        var jwtSetting = new JwtSettings();
-        builderConfiguration.Bind(JwtSettings.SectionName,jwtSetting);
-        services.AddSingleton(Options.Create(jwtSetting));
-
         services.AddSingleton<IJwtTokenGenerator,JwtTokenGenerator>();
 
         services.AddAuthentication(defaultScheme: JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters()
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                ValidIssuer = jwtSetting.Issuer,
-                ValidAudience = jwtSetting.Audience,
-                IssuerSigningKey = new SymmetricSecurityKey(
-                    Encoding.UTF8.GetBytes(jwtSetting.Secret)),
-            });
+            .AddJwtBearer();
+
+        services.ConfigureOptions<JwtOptionSetup>();
+        services.ConfigureOptions<JwtBearerOptionSetup>();
+
+        return services;
+    }
+
+    private static IServiceCollection AddCaching(this IServiceCollection services, IConfiguration configuration)
+    {
+        string connectionString = configuration.GetConnectionString("Cache") ??
+                                  throw new ArgumentNullException(nameof(configuration));
+
+        services.AddStackExchangeRedisCache(options => options.Configuration = connectionString);
+
+        services.AddSingleton<ICacheService, CacheService>();
 
         return services;
     }

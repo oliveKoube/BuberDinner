@@ -1,23 +1,26 @@
-﻿using BuberDinner.Application.Common.Interfaces.Persistence;
-using BuberDinner.Application.Menus.Commands;
+﻿using Bookify.Domain.Abstractions;
+using BuberDinner.Application.Common.Interfaces.Persistence;
+using BuberDinner.Application.Menus.CreateMenu;
 using BuberDinner.Application.UnitTests.Menus.Commands.TestUtils;
 using BuberDinner.Application.UnitTests.TestUtils.Menus.Extensions;
-
+using BuberDinner.Domain.MenuAggregate;
+using ErrorOr;
 using FluentAssertions;
-
-using Moq;
+using NSubstitute;
 
 namespace BuberDinner.Application.UnitTests.Menus.Commands.CreateMenu;
 
 public class CreateMenuCommandHandlerTests
 {
     private readonly CreateMenuCommandHandler _handler;
-    private readonly Mock<IMenuRepository> _mockMenuRepository;
+    private readonly IMenuRepository _menuRepositoryMock;
+    private readonly IUnitOfWork _unitOfWorkMock;
 
     public CreateMenuCommandHandlerTests()
     {
-        _mockMenuRepository = new Mock<IMenuRepository>();
-        _handler = new CreateMenuCommandHandler(_mockMenuRepository.Object);
+        _unitOfWorkMock = Substitute.For<IUnitOfWork>();
+        _menuRepositoryMock = Substitute.For<IMenuRepository>();
+        _handler = new CreateMenuCommandHandler(_menuRepositoryMock,_unitOfWorkMock);
     }
 
     //T1 : System Under Test - logical component we are testing
@@ -30,12 +33,12 @@ public class CreateMenuCommandHandlerTests
         //Arrange
 
         //Act
-        var result = await _handler.Handle(createMenuCommand, default);
+        ErrorOr<Menu> result = await _handler.Handle(createMenuCommand, default);
 
         //Assert
         result.IsError.Should().BeFalse();
         result.Value.ValidateCreatedFrom(createMenuCommand);
-        _mockMenuRepository.Verify(m => m.AddAsync(result.Value), Times.Once);
+        _menuRepositoryMock.Received(1).Add(Arg.Is<Menu>(menu => menu.Id == result.Value.Id));
     }
 
     public static IEnumerable<object[]> ValidCreateMenuCommands()
@@ -46,7 +49,7 @@ public class CreateMenuCommandHandlerTests
             CreateMenuCommandUtils.CreateCommand(
             sections: CreateMenuCommandUtils.CreateSectionsCommands(sectionCount: 3))
         };
-        
+
         yield return new[]
         {
             CreateMenuCommandUtils.CreateCommand(

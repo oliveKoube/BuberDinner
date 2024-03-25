@@ -1,46 +1,46 @@
-﻿using BuberDinner.Application.Authentification.Commands.Register;
-using BuberDinner.Application.Authentification.Common;
-using ErrorOr;
-using FluentResults;
+﻿using ErrorOr;
 using FluentValidation;
 using MediatR;
-using Error = ErrorOr.Error;
+using BuberDinner.Application.Exceptions;
+using ValidationException = BuberDinner.Application.Exceptions.ValidationException;
 
 namespace BuberDinner.Application.Common.Behaviors;
 
-public class ValidationBehavior<TRequest,TResponse> 
+public class ValidationBehavior<TRequest,TResponse>
     : IPipelineBehavior<TRequest,TResponse>
     where TRequest : IRequest<TResponse>
     where TResponse : IErrorOr
 {
-    private readonly IValidator<TRequest>? _validator;
+    private readonly IEnumerable<IValidator<TRequest>> _validators;
 
-    public ValidationBehavior(IValidator<TRequest>? validator=null)
+    public ValidationBehavior(IEnumerable<IValidator<TRequest>> validators)
     {
-        _validator = validator;
+        _validators = validators;
     }
 
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next,
         CancellationToken cancellationToken)
     {
-        if (_validator is null)
+        if (!_validators.Any())
         {
             return await next();
         }
-        var validationResult = await _validator.ValidateAsync(request, cancellationToken);
-        if (validationResult.IsValid)
-        {
-            return await next();
-        }
+        var context = new ValidationContext<TRequest>(request);
 
-        var errorList = validationResult.Errors
-            .ConvertAll(validationFailure => Error.Validation(
+        var validationErrors = _validators
+            .Select(validator => validator.Validate(context))
+            .Where(validationResult => validationResult.Errors.Any())
+            .SelectMany(validationResult => validationResult.Errors)
+            .Select(validationFailure => new ValidationError(
                 validationFailure.PropertyName,
-                validationFailure.ErrorMessage));
+                validationFailure.ErrorMessage))
+            .ToList();
 
-        // before the handler
-        // var result = await next();
-        // after the handler
-        return (dynamic)errorList;
+        if (validationErrors.Any())
+        {
+            throw new ValidationException(validationErrors);
+        }
+
+        return await next();
     }
 }

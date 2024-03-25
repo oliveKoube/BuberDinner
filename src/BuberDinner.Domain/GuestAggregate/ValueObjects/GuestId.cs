@@ -1,23 +1,22 @@
 ﻿using BuberDinner.Domain.Common.Models;
 
-namespace BuberDinner.Domain.GuestAggregate.ValueObjects
+namespace BuberDinner.Domain.GuestAggregate.ValueObjects;
+
+public sealed class GuestId : AggregateRootId<Guid>
 {
-    public sealed class GuestId : AggregateRootId<Guid>
+    public override Guid Value { get; protected set; }
+
+    private GuestId(Guid value)
     {
-        public override Guid Value { get; protected set; }
+        Value = value;
+    }
 
-        private GuestId(Guid value)
-        {
-            Value = value;
-        }
+    public static GuestId CreateUnique() => new(Guid.NewGuid());
 
-        public static GuestId CreateUnique() => new(Guid.NewGuid());
-        
-        public static GuestId Create(Guid value) => new(value);
+    public static GuestId Create(Guid value) => new(value);
 
-        public override IEnumerable<object> GetEqualityComponnents()
-        {
-            yield return Value; 
-        }
+    public override IEnumerable<object> GetEqualityComponnents()
+    {
+        yield return Value;
     }
 }

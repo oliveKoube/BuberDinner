@@ -1,18 +1,19 @@
 ﻿using BuberDinner.Application.Common.Interfaces.Persistence;
 using BuberDinner.Domain.UserAggregate;
+using BuberDinner.Domain.UserAggregate.ValueObjects;
+using Microsoft.EntityFrameworkCore;
 
 namespace BuberDinner.Infrastructure.Persistence.Repositories;
 
-public class UserRepository : IUserRepository
+internal sealed class UserRepository : Repository<User, UserId>,IUserRepository
 {
-    private static List<User> _users = new();
-    public User? getUserByEmail(string email)
+    public UserRepository(BuberDinnerDbContext buberDinnerDbContext) :
+        base(buberDinnerDbContext)
     {
-        return _users.SingleOrDefault(x=>x.Email==email);
-    }
 
-    public void Add(User user)
+    }
+    public async Task<User?> GetUserByEmailAsync(Email email)
     {
-        _users.Add(user);
+        return await DbContext.Set<User>().SingleOrDefaultAsync(x=>x.Email==email);
     }
 }

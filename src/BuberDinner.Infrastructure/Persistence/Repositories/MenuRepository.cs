@@ -1,27 +1,19 @@
 ﻿using BuberDinner.Application.Common.Interfaces.Persistence;
 using BuberDinner.Domain.MenuAggregate;
+using BuberDinner.Domain.MenuAggregate.ValueObjects;
 
-namespace BuberDinner.Infrastructure.Persistence.Repositories
+namespace BuberDinner.Infrastructure.Persistence.Repositories;
+
+internal sealed class MenuRepository : Repository<Menu, MenuId>, IMenuRepository
 {
-    public class MenuRepository : IMenuRepository
+
+    public MenuRepository(BuberDinnerDbContext buberDinnerDbContext)
+        : base(buberDinnerDbContext)
     {
-        private readonly BuberDinnerDbContext _dbContext;
+    }
 
-        public MenuRepository(BuberDinnerDbContext buberDinnerDbContext)
-        {
-            _dbContext = buberDinnerDbContext;
-        }
-
-        public void Add(Menu menu)
-        {
-            _dbContext.Add(menu);
-            _dbContext.SaveChanges();
-        }
-
-        public async Task AddAsync(Menu menu)
-        {
-            await _dbContext.AddAsync(menu);
-            await _dbContext.SaveChangesAsync();
-        }
+    public override void Add(Menu menu)
+    {
+        DbContext.Add(menu);
     }
 }

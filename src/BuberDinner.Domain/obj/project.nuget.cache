@@ -1,13 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "7lUXDo5ko1Z9wFrhlFPzTXf15tEoJn6JkhT4H7SGLc2EjJ78ezq2v59T5hQq0CTDo0m0JMynJxSWCpM8UibORA==",
+  "dgSpecHash": "V6i4pFRlIFgZ/nJXM6l8SEzELA7r7mW/ZKuLbMAOZNTweAJt7HA77NOD1S+Pv5G1RFLDElbLmmYAsoY3D8RdKw==",
   "success": true,
   "projectFilePath": "D:\\PROJETS\\BuberDinner\\src\\BuberDinner.Domain\\BuberDinner.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\olive.koube\\.nuget\\packages\\erroror\\1.0.0\\erroror.1.0.0.nupkg.sha512",
-    "C:\\Users\\olive.koube\\.nuget\\packages\\mediatr\\12.0.1\\mediatr.12.0.1.nupkg.sha512",
+    "C:\\Users\\olive.koube\\.nuget\\packages\\erroror\\1.10.0\\erroror.1.10.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
-    "C:\\Users\\olive.koube\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\sonaranalyzer.csharp\\9.20.0.85982\\sonaranalyzer.csharp.9.20.0.85982.nupkg.sha512"
   ],
   "logs": []

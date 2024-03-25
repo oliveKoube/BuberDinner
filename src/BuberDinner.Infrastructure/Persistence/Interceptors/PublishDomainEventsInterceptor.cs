@@ -18,14 +18,22 @@ public class PublishDomainEventsInterceptor : SaveChangesInterceptor
 
     public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
     {
-        PublishDomainEvents(eventData.Context).GetAwaiter().GetResult();
+        if (eventData.Context != null)
+        {
+            PublishDomainEvents(eventData.Context).GetAwaiter().GetResult();
+        }
+
         return base.SavingChanges(eventData, result);
     }
-    
+
     public async override ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result,
         CancellationToken cancellationToken = new CancellationToken())
     {
-        await PublishDomainEvents(eventData.Context);
+        if (eventData.Context != null)
+        {
+            await PublishDomainEvents(eventData.Context);
+        }
+
         return await base.SavingChangesAsync(eventData, result, cancellationToken);
     }
 
@@ -47,9 +55,9 @@ public class PublishDomainEventsInterceptor : SaveChangesInterceptor
 
         //Clear domain events
         entitiesWithDomainEvents.ForEach(entity => entity.ClearDomainEvents());
-        
+
         //Publish domain events
-        foreach (var domainEvent in domainEvents)
+        foreach (IDomainEvent domainEvent in domainEvents)
         {
             await _mediator.Publish(domainEvent);
         }
