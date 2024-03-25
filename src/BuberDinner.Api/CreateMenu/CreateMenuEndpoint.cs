@@ -3,20 +3,13 @@ using BuberDinner.Application.Menus.CreateMenu;
 using ErrorOr;
 using FastEndpoints;
 using MediatR;
+using IMapper = MapsterMapper.IMapper;
 
 namespace BuberDinner.Api.CreateMenu;
 
-public class CreateMenuEndpoint : Endpoint<CreateMenuRequest, CreateMenuResponse>
+public class CreateMenuEndpoint(ISender mediator, IMapper mapper)
+    : Endpoint<CreateMenuRequest, CreateMenuResponse>
 {
-    private readonly ISender _mediator;
-    private readonly MapsterMapper.IMapper _mapper;
-
-    public CreateMenuEndpoint(ISender mediator, MapsterMapper.IMapper mapper)
-    {
-        _mediator = mediator;
-        _mapper = mapper;
-    }
-
     public override void Configure()
     {
         Post("api/v1/host/{hostId}/menus");
@@ -24,11 +17,11 @@ public class CreateMenuEndpoint : Endpoint<CreateMenuRequest, CreateMenuResponse
 
     public override async Task HandleAsync(CreateMenuRequest req, CancellationToken ct)
     {
-        CreateMenuCommand command = _mapper.Map<CreateMenuCommand>((req.CreateMenu,req.HostId));
-        ErrorOr<Domain.MenuAggregate.Menu> createMenuResult = await _mediator.Send(command,ct);
+        CreateMenuCommand command = mapper.Map<CreateMenuCommand>((req.CreateMenu,req.HostId));
+        ErrorOr<Domain.MenuAggregate.Menu> createMenuResult = await mediator.Send(command,ct);
 
         await createMenuResult.Match(
-            result => SendOkAsync(_mapper.Map<CreateMenuResponse>(result), ct),
+            result => SendOkAsync(mapper.Map<CreateMenuResponse>(result), ct),
             errors => SendErrorsAsync(errors[0].NumericType,ct));
     }
 }

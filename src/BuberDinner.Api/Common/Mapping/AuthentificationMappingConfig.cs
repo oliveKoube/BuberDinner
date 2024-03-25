@@ -1,5 +1,4 @@
-﻿using BuberDinner.Api.Controllers.Authentification;
-using BuberDinner.Api.Login;
+﻿using BuberDinner.Api.Login;
 using BuberDinner.Api.Register;
 using BuberDinner.Application.Authentification.Common;
 using BuberDinner.Application.Authentification.Login;
