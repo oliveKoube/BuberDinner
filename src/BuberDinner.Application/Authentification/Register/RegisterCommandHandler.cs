@@ -24,7 +24,7 @@ internal sealed class RegisterCommandHandler :
         await Task.CompletedTask;
 
         //1.Validate the user exists
-        if(await _userRepository.GetUserByEmailAsync(request.Email) is not null)
+        if(await _userRepository.GetUserByEmailAsync(request.Email, cancellationToken) is not null)
         {
             return UserErrors.DuplicateEmail;
         }

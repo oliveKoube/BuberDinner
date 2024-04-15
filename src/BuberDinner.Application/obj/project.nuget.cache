@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BcVsHvOHIOflstojIOpZQznigNHOm0MG8CtNPTBAWLLaYYIo9492Ox6FMnaNSoQYVH7yr4aHUoN+wGLz0vFnSg==",
+  "dgSpecHash": "bJbTfFWPzEf2/W2CvaTVjkr5aTVWRFL3YZLYBr4nByme4Rbr7p+p8z/0gPUcLtf45XGrnMf145eNLy1fdgqzig==",
   "success": true,
   "projectFilePath": "D:\\PROJETS\\BuberDinner\\src\\BuberDinner.Application\\BuberDinner.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\olive.koube\\.nuget\\packages\\erroror\\1.10.0\\erroror.1.10.0.nupkg.sha512",
+    "C:\\Users\\olive.koube\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",

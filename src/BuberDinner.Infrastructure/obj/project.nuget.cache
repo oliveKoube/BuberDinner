@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "dwnOiimt86UoKvoqG1HLaaMfL1yRiXEC5R7n98fTH1QOSIJ9jqy6pVlg+tCExCivuHh2yfrh/LUXI1ZRMKOljw==",
+  "dgSpecHash": "bfQr1nKx4Scs/sdh0OSf+aYcfrqqMC6YFrWOWmOyrp7dXrJJ/Fjrw/iWu4VKhL2p5i1lh0VrggJ0nZOAjJN1XQ==",
   "success": true,
   "projectFilePath": "D:\\PROJETS\\BuberDinner\\src\\BuberDinner.Infrastructure\\BuberDinner.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olive.koube\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
-    "C:\\Users\\olive.koube\\.nuget\\packages\\erroror\\1.10.0\\erroror.1.10.0.nupkg.sha512",
+    "C:\\Users\\olive.koube\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",

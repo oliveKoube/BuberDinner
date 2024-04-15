@@ -23,15 +23,13 @@ internal sealed class LoginQueryHandler :
     public async Task<ErrorOr<AuthentificationResult>> Handle(LoginQuery request, CancellationToken cancellationToken)
     {
         //1. Validate the user exists
-        if(await _userRepository.GetUserByEmailAsync(request.Email) is not null)
+        if(await _userRepository.GetUserByEmailAsync(request.Email, cancellationToken) is not User user)
         {
             return AuthentificationErrors.InvalidCreadentials;
         }
 
-        User? user = await _userRepository.GetUserByEmailAsync(request.Email);
-
         //2. Validate the password is correct
-        if (user!.Password != request.Password)
+        if (user.Password != request.Password)
         {
             return AuthentificationErrors.InvalidCreadentials;
         }

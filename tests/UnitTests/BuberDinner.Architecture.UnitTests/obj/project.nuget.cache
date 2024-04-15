@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "tLVhjUIVe8+xJR6SMeNjLf7smh793OoTt/2e2iMYUdtW854JFD6jovuLYRNpSxgik8/J7ljJM+PyUbI8zsfP5Q==",
+  "dgSpecHash": "YLaXyK4PcbzqaTynLEqwg8vB4SQDZGeqGLekFer/Uw2nrQXOTFo8jPBcljPvp6uWw3MEAAKaermmXSh1X02sag==",
   "success": true,
   "projectFilePath": "D:\\PROJETS\\BuberDinner\\tests\\UnitTests\\BuberDinner.Architecture.UnitTests\\BuberDinner.Architecture.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olive.koube\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
-    "C:\\Users\\olive.koube\\.nuget\\packages\\erroror\\1.10.0\\erroror.1.10.0.nupkg.sha512",
+    "C:\\Users\\olive.koube\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\fastendpoints\\5.23.0\\fastendpoints.5.23.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\fastendpoints.attributes\\5.23.0\\fastendpoints.attributes.5.23.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\fastendpoints.messaging.core\\5.23.0\\fastendpoints.messaging.core.5.23.0.nupkg.sha512",

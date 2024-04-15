@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Y3tVq39LfrF5rzbOhDnPCVvCNnglCSYze9QSekRjx9iR6StnVKD1FukjURa84U4JA+SUeEeXSryWjP7qgzg1LQ==",
+  "dgSpecHash": "bhYo1CM4Q5HHbPnO0MfZq9R6jNjn1uY0aStgYSlXwslN4QjAJKC3Bx9Avc8y6uqM+MMR2l9l1t0R5e8/F9y8OQ==",
   "success": true,
   "projectFilePath": "D:\\PROJETS\\BuberDinner\\tests\\UnitTests\\BuberDinner.Domain.UnitTests\\BuberDinner.Domain.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olive.koube\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
-    "C:\\Users\\olive.koube\\.nuget\\packages\\erroror\\1.10.0\\erroror.1.10.0.nupkg.sha512",
+    "C:\\Users\\olive.koube\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\olive.koube\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

@@ -13,6 +13,7 @@ public class LoginEndpoint(ISender mediator, IMapper mapper)
     public override void Configure()
     {
         Post("api/login");
+        AllowAnonymous();
     }
 
     public override async Task HandleAsync(LoginRequest req, CancellationToken ct)
