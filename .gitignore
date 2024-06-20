@@ -12,3 +12,7 @@
 /tests/UnitTests/BuberDinner.Application.UnitTests/bin
 /src/BuberDinner.Api/obj
 /src/BuberDinner.Api/bin
+/obj
+/.vs
+/.vscode
+/.idea
