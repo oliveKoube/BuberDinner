@@ -12,3 +12,14 @@
 /tests/UnitTests/BuberDinner.Application.UnitTests/bin
 /src/BuberDinner.Api/obj
 /src/BuberDinner.Api/bin
+/.idea
+/.vs
+/.vscode
+/obj
+/src/.idea
+/src/BuberDinner.Application/bin
+/src/BuberDinner.Application/obj
+/src/BuberDinner.Domain/obj
+/src/BuberDinner.Domain/bin
+/src/BuberDinner.Infrastructure/obj
+/src/BuberDinner.Infrastructure/bin
