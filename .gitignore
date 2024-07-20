@@ -23,3 +23,9 @@
 /src/BuberDinner.Domain/bin
 /src/BuberDinner.Infrastructure/obj
 /src/BuberDinner.Infrastructure/bin
+/tests/UnitTests/BuberDinner.Api.Functionnal.UnitTests/bin
+/tests/UnitTests/BuberDinner.Api.Functionnal.UnitTests/obj
+/tests/UnitTests/BuberDinner.Architecture.UnitTests/bin
+/tests/UnitTests/BuberDinner.Architecture.UnitTests/obj
+/tests/UnitTests/BuberDinner.Domain.UnitTests/obj
+/tests/UnitTests/BuberDinner.Domain.UnitTests/bin
