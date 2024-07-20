@@ -6283,19 +6283,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\olive.koube\\.nuget\\packages\\": {}
+    "C:\\Users\\olive\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROJETS\\BuberDinner\\tests\\UnitTests\\BuberDinner.Domain.UnitTests\\BuberDinner.Domain.UnitTests.csproj",
+      "projectUniqueName": "D:\\Projets\\BuberDinner\\tests\\UnitTests\\BuberDinner.Domain.UnitTests\\BuberDinner.Domain.UnitTests.csproj",
       "projectName": "BuberDinner.Domain.UnitTests",
-      "projectPath": "D:\\PROJETS\\BuberDinner\\tests\\UnitTests\\BuberDinner.Domain.UnitTests\\BuberDinner.Domain.UnitTests.csproj",
-      "packagesPath": "C:\\Users\\olive.koube\\.nuget\\packages\\",
-      "outputPath": "D:\\PROJETS\\BuberDinner\\tests\\UnitTests\\BuberDinner.Domain.UnitTests\\obj\\",
+      "projectPath": "D:\\Projets\\BuberDinner\\tests\\UnitTests\\BuberDinner.Domain.UnitTests\\BuberDinner.Domain.UnitTests.csproj",
+      "packagesPath": "C:\\Users\\olive\\.nuget\\packages\\",
+      "outputPath": "D:\\Projets\\BuberDinner\\tests\\UnitTests\\BuberDinner.Domain.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\olive.koube\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\olive\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6303,14 +6310,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\PROJETS\\BuberDinner\\src\\BuberDinner.Domain\\BuberDinner.Domain.csproj": {
-              "projectPath": "D:\\PROJETS\\BuberDinner\\src\\BuberDinner.Domain\\BuberDinner.Domain.csproj"
+            "D:\\Projets\\BuberDinner\\src\\BuberDinner.Domain\\BuberDinner.Domain.csproj": {
+              "projectPath": "D:\\Projets\\BuberDinner\\src\\BuberDinner.Domain\\BuberDinner.Domain.csproj"
             }
           }
         }
@@ -6373,7 +6381,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\olive.koube\\.dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

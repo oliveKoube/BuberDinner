@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BuberDinner.Api.Functionnal.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+360f21cd05cca9e4c8a41e68a088effce39278be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+367c09c75303c976e0d431dfd23a55b2d55ff9c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BuberDinner.Api.Functionnal.UnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BuberDinner.Api.Functionnal.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

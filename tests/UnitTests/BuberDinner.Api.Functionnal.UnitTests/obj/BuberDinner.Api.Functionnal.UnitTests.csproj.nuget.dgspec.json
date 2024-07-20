@@ -1,20 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJETS\\BuberDinner\\tests\\UnitTests\\BuberDinner.Api.Functionnal.UnitTests\\BuberDinner.Api.Functionnal.UnitTests.csproj": {}
+    "D:\\Projets\\BuberDinner\\tests\\UnitTests\\BuberDinner.Api.Functionnal.UnitTests\\BuberDinner.Api.Functionnal.UnitTests.csproj": {}
   },
   "projects": {
-    "D:\\PROJETS\\BuberDinner\\tests\\UnitTests\\BuberDinner.Api.Functionnal.UnitTests\\BuberDinner.Api.Functionnal.UnitTests.csproj": {
+    "D:\\Projets\\BuberDinner\\tests\\UnitTests\\BuberDinner.Api.Functionnal.UnitTests\\BuberDinner.Api.Functionnal.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJETS\\BuberDinner\\tests\\UnitTests\\BuberDinner.Api.Functionnal.UnitTests\\BuberDinner.Api.Functionnal.UnitTests.csproj",
+        "projectUniqueName": "D:\\Projets\\BuberDinner\\tests\\UnitTests\\BuberDinner.Api.Functionnal.UnitTests\\BuberDinner.Api.Functionnal.UnitTests.csproj",
         "projectName": "BuberDinner.Api.Functionnal.UnitTests",
-        "projectPath": "D:\\PROJETS\\BuberDinner\\tests\\UnitTests\\BuberDinner.Api.Functionnal.UnitTests\\BuberDinner.Api.Functionnal.UnitTests.csproj",
-        "packagesPath": "C:\\Users\\olive.koube\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJETS\\BuberDinner\\tests\\UnitTests\\BuberDinner.Api.Functionnal.UnitTests\\obj\\",
+        "projectPath": "D:\\Projets\\BuberDinner\\tests\\UnitTests\\BuberDinner.Api.Functionnal.UnitTests\\BuberDinner.Api.Functionnal.UnitTests.csproj",
+        "packagesPath": "C:\\Users\\olive\\.nuget\\packages\\",
+        "outputPath": "D:\\Projets\\BuberDinner\\tests\\UnitTests\\BuberDinner.Api.Functionnal.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\olive.koube\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\olive\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -84,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\olive.koube\\.dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
